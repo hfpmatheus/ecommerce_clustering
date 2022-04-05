@@ -24,7 +24,7 @@ Here I focused on seeing the quantitity and quality of the data. Aimed to answer
 
 ### 3.3. Data Filtering:
 
-Filtered data considering business assumptions.
+Filtered data considering descriptive statistics and business assumptions.
 
 ### 3.4. Feature Engineering: 
 
@@ -34,29 +34,29 @@ Derivated new features that make business sense from the existing ones and could
 
 Sought to understand a litte bit more of the data with Pandas Profiling, pairplot and Space Study.
 
-**Pandas Profiling:**
+#### **3.5.1. Pandas Profiling:** Visualizing and understanding the distribution of each variable.
 
-**Pairplot:**
+#### **3.5.2. Pairplot:** Seeing correlated features two by two.
 
-**Space Study:**
+#### **3.5.3. Space Study:** Translating a high-dimensional vector into a two dimension space and ploting this to try to see better clusters.
 
 ### 3.6. Data Preparation: 
 
-Also called pre processing, consists in "translate" raw data into a language that the model understands. Data preparation involves tasks like: standardization, rescaling and encoding. This is a very important step and directly affects the models.
+Also called pre processing, consists in "translate" raw data into a language that the model understands. Here I rescaled all features using MinMaxScaler due their non normal distributions and outliers.
 
 ### 3.7. Feature Selection: 
 
-Used business knowledge for chose the best features.
-
---------------------------------------------------------- UNDONE --------------------------------------------------------------
+Used business knowledge for chose the best features. Here I decided to exclude the 'average' features.
 
 ### 3.9. Hyperparameter Fine Tunning: 
 
-Used the random search method of Hyperparameter Fine Tuning in order to choose a set of optimal parameters for the model I chose. ( XGBoost )
+I tested six K values in three different models using the Silhouette Score as a metric.
 
-### 3.8. Machine Learning Modelling:
+### 3.8. Final Model:
 
-This is the point at which our hard work begins to pay off. The data we spent time preparing are brought into the machine learning models and the results begin to shed some light on the business problem posed during Business Understanding. Here I tested several models using chosen metrics for the problem and cross validation to see if the results were good or not.
+Reruned K-Means with 4 clusters ( K ) due the great results.
+
+------------------------------------------------------------- UNDONE 
 
 ### 3.10. Cluster Analysis:
 
