@@ -46,7 +46,7 @@ Also called pre processing, consists in "translate" raw data into a language tha
 
 ### 3.7. Feature Selection: 
 
-Used business knowledge for chose the best features. Here I decided to exclude the 'average' features.
+Used business knowledge for chose the best features.
 
 ### 3.9. Hyperparameter Fine Tunning: 
 
@@ -54,13 +54,15 @@ I tested six K values in three different models using the Silhouette Score as a 
 
 ### 3.8. Final Model:
 
-Reruned K-Means with 4 clusters ( K ) due the great results.
-
-------------------------------------------------------------- UNDONE 
+Reruned K-Means with 5 clusters ( K ) due the great results.
 
 ### 3.10. Cluster Analysis:
 
-Translated the metrics from the final model to the results the business will have if implement it.
+Analyzed the performance of the model with Silhouette Plot, Pairplot and UMAP.
+
+### 3.11. Cluster Insights:
+
+Visualized characteristics of each cluster and answered business questions.
 
 ## 4.0. Top 3 Data Insights:
 
@@ -84,53 +86,23 @@ Translated the metrics from the final model to the results the business will hav
 
 ## 5.0. Machine Learning Models Applied:
 
-- KNN
-- Logistic Regression
-- Extra Trees
-- XGBoost
-- LightGBM
+- K-Means
+- Gaussian Mixture Model ( GMM )
+- Hierarchical Clustering
 
 ## 6.0. Machine Learning Model Performance:
 
-The model chosen for production was XGBoost, given its success in terms of metrics and memory.
-
-### 6.1. Cumulative Gains Curve:
-
-<img src="img/cumulative_gains.png" alt="drawing" width="50%"/>
-
-The cumulative gains curve is an evaluation curve that assesses the performance of the model and compares the results with the random pick. It shows the percentage of targets reached when considering a certain percentage of the population with the highest probability to be target according to the model.
+K-Mean with K equal to 5 due the good Silhouette Score.
 
 ## 7.0. Business Results:
 
-### 7.1. At K metrics:
-
-<img src="img/metrics.png" alt="drawing" width="50%"/>
-
-**Precision at K Meaning**: Within the first 20.000 customers sorted according to highest propensity to purchase, 31% of them (6,000) are really interested.
-
-**Recall at K Meaning**: Within the first 20.000 customers sorted by highest propensity to purchase, are 83% of the total interested.
-
-### 7.2. Lift Curve:
-
-<img src="img/lift_curve.png" alt="drawing" width="50%"/>
-
-**Lift Curve Meaning**: The Lift Curve says how many times our model it's better than the baseline.
-
-Considering the costs with sales team using the baseline model ( randomly ordered ) as **X**, we have that using the XGBoost our cost declines to X/Y.
-
-**Example**: To reach 40% of our customers base using the baseline model we spend X dollars, let's say $1000. If using the XGBoost one we would spend $1000/2 = $500 ( because the graph shows that in this point the XGBoost model it's 2 times better than the baseline. In conclusion, our cost would decline 50%.
-
 ## 8.0. Conclusion:
-
-Given the result of the project, it can be said that for a first cycle of the CRISP-DM methodology we were successful, delivering fast and effective results through a model capable of sorting a customer base by purchase propensity and returning this prediction in a table from Google Sheets.
-
-<img src="img/design_pa004.png" alt="drawing" width="50%"/>
 
 ## 9.0. Next Steps to improve:
 
-- Discover more relevant features.
-- Survival Analysis to estimate how many emails or calls until a customer purchase the vehicle insurance.
+- Run the models on embedding space for better score.
+- Make a script to rerun the model from time to time and actualize the clusters. Also deploy it on a production environment.
 
 ## 10.0. References:
 
-- [Kaggle](https://www.kaggle.com/anmolkumar/health-insurance-cross-sell-prediction)
+- [Comunidade DS](https://www.comunidadedatascience.com/como-criar-um-programa-de-fidelidade-para-empresa/)
