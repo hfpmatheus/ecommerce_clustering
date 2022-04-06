@@ -48,11 +48,11 @@ Also called pre processing, consists in "translate" raw data into a language tha
 
 Used business knowledge for chose the best features.
 
-### 3.9. Hyperparameter Fine Tunning: 
+### 3.8. Hyperparameter Fine Tunning: 
 
 I tested six K values in three different models using the Silhouette Score as a metric.
 
-### 3.8. Final Model:
+### 3.9. Final Model:
 
 Reruned K-Means with 5 clusters ( K ) due the great results.
 
@@ -92,7 +92,9 @@ Visualized characteristics of each cluster and answered business questions.
 
 ## 6.0. Machine Learning Model Performance:
 
-K-Mean with K equal to 5 due the good Silhouette Score.
+K-Means with K equal to 5 due the good Silhouette Score.
+
+>>>>>>>> SILHOUETTE PLOT IMAGE <<<<<<<<<<<<
 
 ## 7.0. Business Results:
 
