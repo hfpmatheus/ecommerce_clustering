@@ -96,7 +96,7 @@ K-Means with K equal to 5 due the good Silhouette Score.
 
 >>>>>>>> SILHOUETTE PLOT IMAGE <<<<<<<<<<<<
 
-## 7.0. Business Results:
+## 7.0. Business Report:
 
 ## 8.0. Conclusion:
 
@@ -104,6 +104,7 @@ K-Means with K equal to 5 due the good Silhouette Score.
 
 - Run the models on embedding space for better score.
 - Make a script to rerun the model from time to time and actualize the clusters. Also deploy it on a production environment.
+- Predict the revenue of the 'Private' cluster for the next months.
 
 ## 10.0. References:
 
