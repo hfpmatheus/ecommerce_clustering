@@ -24,7 +24,7 @@ Here I focused on seeing the quantitity and quality of the data. Aimed to answer
 
 ### 3.3. Data Filtering:
 
-Filtered data considering business assumptions.
+Filtered data considering descriptive statistics and business assumptions.
 
 ### 3.4. Feature Engineering: 
 
@@ -34,33 +34,35 @@ Derivated new features that make business sense from the existing ones and could
 
 Sought to understand a litte bit more of the data with Pandas Profiling, pairplot and Space Study.
 
-**Pandas Profiling:**
+#### **3.5.1. Pandas Profiling:** Visualizing and understanding the distribution of each variable.
 
-**Pairplot:**
+#### **3.5.2. Pairplot:** Seeing correlated features two by two.
 
-**Space Study:**
+#### **3.5.3. Space Study:** Translating a high-dimensional vector into a two dimension space and ploting this to try to see better clusters.
 
 ### 3.6. Data Preparation: 
 
-Also called pre processing, consists in "translate" raw data into a language that the model understands. Data preparation involves tasks like: standardization, rescaling and encoding. This is a very important step and directly affects the models.
+Also called pre processing, consists in "translate" raw data into a language that the model understands. Here I rescaled all features using MinMaxScaler due their non normal distributions and outliers.
 
 ### 3.7. Feature Selection: 
 
 Used business knowledge for chose the best features.
 
---------------------------------------------------------- UNDONE --------------------------------------------------------------
+### 3.8. Hyperparameter Fine Tunning: 
 
-### 3.9. Hyperparameter Fine Tunning: 
+I tested six K values in three different models using the Silhouette Score as a metric.
 
-Used the random search method of Hyperparameter Fine Tuning in order to choose a set of optimal parameters for the model I chose. ( XGBoost )
+### 3.9. Final Model:
 
-### 3.8. Machine Learning Modelling:
-
-This is the point at which our hard work begins to pay off. The data we spent time preparing are brought into the machine learning models and the results begin to shed some light on the business problem posed during Business Understanding. Here I tested several models using chosen metrics for the problem and cross validation to see if the results were good or not.
+Reruned K-Means with 5 clusters ( K ) due the great results.
 
 ### 3.10. Cluster Analysis:
 
-Translated the metrics from the final model to the results the business will have if implement it.
+Analyzed the performance of the model with Silhouette Plot, Pairplot and UMAP.
+
+### 3.11. Cluster Insights:
+
+Visualized characteristics of each cluster and answered business questions.
 
 ## 4.0. Top 3 Data Insights:
 
@@ -84,53 +86,26 @@ Translated the metrics from the final model to the results the business will hav
 
 ## 5.0. Machine Learning Models Applied:
 
-- KNN
-- Logistic Regression
-- Extra Trees
-- XGBoost
-- LightGBM
+- K-Means
+- Gaussian Mixture Model ( GMM )
+- Hierarchical Clustering
 
 ## 6.0. Machine Learning Model Performance:
 
-The model chosen for production was XGBoost, given its success in terms of metrics and memory.
+K-Means with K equal to 5 due the good Silhouette Score.
 
-### 6.1. Cumulative Gains Curve:
+>>>>>>>> SILHOUETTE PLOT IMAGE <<<<<<<<<<<<
 
-<img src="img/cumulative_gains.png" alt="drawing" width="50%"/>
-
-The cumulative gains curve is an evaluation curve that assesses the performance of the model and compares the results with the random pick. It shows the percentage of targets reached when considering a certain percentage of the population with the highest probability to be target according to the model.
-
-## 7.0. Business Results:
-
-### 7.1. At K metrics:
-
-<img src="img/metrics.png" alt="drawing" width="50%"/>
-
-**Precision at K Meaning**: Within the first 20.000 customers sorted according to highest propensity to purchase, 31% of them (6,000) are really interested.
-
-**Recall at K Meaning**: Within the first 20.000 customers sorted by highest propensity to purchase, are 83% of the total interested.
-
-### 7.2. Lift Curve:
-
-<img src="img/lift_curve.png" alt="drawing" width="50%"/>
-
-**Lift Curve Meaning**: The Lift Curve says how many times our model it's better than the baseline.
-
-Considering the costs with sales team using the baseline model ( randomly ordered ) as **X**, we have that using the XGBoost our cost declines to X/Y.
-
-**Example**: To reach 40% of our customers base using the baseline model we spend X dollars, let's say $1000. If using the XGBoost one we would spend $1000/2 = $500 ( because the graph shows that in this point the XGBoost model it's 2 times better than the baseline. In conclusion, our cost would decline 50%.
+## 7.0. Business Report:
 
 ## 8.0. Conclusion:
 
-Given the result of the project, it can be said that for a first cycle of the CRISP-DM methodology we were successful, delivering fast and effective results through a model capable of sorting a customer base by purchase propensity and returning this prediction in a table from Google Sheets.
-
-<img src="img/design_pa004.png" alt="drawing" width="50%"/>
-
 ## 9.0. Next Steps to improve:
 
-- Discover more relevant features.
-- Survival Analysis to estimate how many emails or calls until a customer purchase the vehicle insurance.
+- Run the models on embedding space for better score.
+- Make a script to rerun the model from time to time and actualize the clusters. Also deploy it on a production environment.
+- Predict the revenue of the 'Private' cluster for the next months.
 
 ## 10.0. References:
 
-- [Kaggle](https://www.kaggle.com/anmolkumar/health-insurance-cross-sell-prediction)
+- [Comunidade DS](https://www.comunidadedatascience.com/como-criar-um-programa-de-fidelidade-para-empresa/)
